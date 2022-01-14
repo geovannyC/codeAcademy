@@ -1,0 +1,81 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: auto  auto auto;
+    grid-template-rows: 200px 300px;
+    place-items: center;
+}
+.article{
+width: clamp(200px, 50%, 600px);
+}
+.article {
+    width: 50%;
+}
+/* @media only screen and (max-width: 600px){
+    .article{
+        width: 200px
+    }
+}
+@media only screen and (max-width: 1200px){
+    .article{
+        width: 800px
+    }
+} */
+.video{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+:root{
+    --r: 255;
+    --g: 0;
+    --b: 0;
+    --text-color: rgb(var(--r), var(--g), var(--b))
+}
+p{
+    --text-color: green;
+    color: var(--text-color)
+}
+h1{
+    color: var(--text-color)
+}
+/* animaciones mas simples en css */
+/* tenemos <i class="droop" style="--order: 1"></i> */
+.drop{
+    animation: dropIn 1s ease forwards;
+    animation-delay: calc(var(--order)*100);
+    /* es mas facil q poner animation-delay: 100ms cada uno osea 100ms 200ms 300ms por cada clase */
+}
+/* si queremos poner un numero al encabezado de una lista traida del backend con css lo podemos hacer de la siguiente manera */
+/* <style>
+:root{
+    counter-reset: headings;
+}
+h1{
+    counter-increment: headings;
+}
+h1::before{
+    content: counter(headings);
+}
+</style/> */
+/* mantener focus en un boton */
+.dropdown{
+    opacity: 0;
+    visibility: hidden;
+}
+button:focus-within .dropdown{
+    opacity: 1;
+    visibility: visible;
+}
+/* tips
+ctrl q despliega una lista con posibles accesos
+ctrl shift . perfime buscar entre funciones o hasta archivos
+ctrl e busca un archivo especifico
+ctrl g busca una linea especifica
+ctrl d busca la palabra resaltada
+alt y flechas arriba o abajo mueve la linea seleccionada
+alt shift y flechas copia y pega la linea hacia arriba o abajo
+ctrl l selecciona toda la linea */
